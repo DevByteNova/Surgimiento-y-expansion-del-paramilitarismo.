@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    El surgimiento y expansión del paramilitarismo en Colombia
+  </title>
+
+  <meta
+    name="description"
+    content="Trabajo académico sobre el surgimiento y expansión del paramilitarismo en Colombia."
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fondo: "#F5F7F6",
+            carbon: "#172126",
+            petroleo: "#173B4D",
+            azulgris: "#536878",
+            oliva: "#596B4F",
+            arena: "#D8C9A7",
+            papel: "#E8ECEB"
+          },
+
+          fontFamily: {
+            serif: ["Libre Baskerville", "serif"],
+            sans: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --fondo: #f5f7f6;
+      --carbon: #172126;
+      --petroleo: #173b4d;
+      --azulgris: #536878;
+      --oliva: #596b4f;
+      --arena: #d8c9a7;
+      --papel: #e8eceb;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--fondo);
+      color: var(--carbon);
+      font-family: "Inter", sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Libre Baskerville", serif;
+    }
+
+    /* ================================
+       TEXTURA DE PAPEL
+    ================================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.035;
+      z-index: 9999;
+
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.5'/%3E%3C/svg%3E");
+    }
+
+    /* ================================
+       BARRA SUPERIOR
+    ================================= */
+
+    .editorial-line {
+      height: 4px;
+      width: 100%;
+      background: var(--petroleo);
+    }
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(23, 33, 38, 0.94) 0%,
+          rgba(23, 59, 77, 0.86) 55%,
+          rgba(23, 33, 38, 0.72) 100%
+        ),
+        url("https://upload.wikimedia.org/wikipedia/commons/6/69/Colombia_map_blank.svg");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 70%,
+          rgba(23, 33, 38, 0.85) 100%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ================================
+       NAVEGACIÓN
+    ================================= */
+
+    .nav-link {
+      position: relative;
+      transition: color 0.25s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--arena);
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--arena);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* ================================
+       SECCIONES
+    ================================= */
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 28px;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      width: 65px;
+      height: 3px;
+      background: var(--petroleo);
+    }
+
+    .section-intro {
+      max-width: 780px;
+      line-height: 1.9;
+      color: var(--azulgris);
+    }
+
+    /* ================================
+       TARJETAS
+    ================================= */
+
+    .editorial-card {
+      background: white;
+      border: 1px solid #dfe4e3;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .editorial-card:hover {
+      transform: translateY(-6px);
+
+      box-shadow:
+        0 18px 40px rgba(23, 33, 38, 0.1);
+
+      border-color: var(--azulgris);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--petroleo);
+      color: white;
+    }
+
+    /* ================================
+       TIMELINE
+    ================================= */
+
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 22px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+
+      background: var(--azulgris);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 70px;
+      margin-bottom: 65px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 10px;
+      top: 3px;
+
+      width: 26px;
+      height: 26px;
+
+      border-radius: 50%;
+      background: var(--petroleo);
+
+      border: 5px solid var(--fondo);
+
+      box-shadow:
+        0 0 0 2px var(--petroleo);
+    }
+
+    .timeline-year {
+      display: inline-block;
+      padding: 5px 12px;
+
+      background: var(--arena);
+      color: var(--carbon);
+
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    /* ================================
+       ACTORES
+    ================================= */
+
+    .actor-card {
+      position: relative;
+      overflow: hidden;
+
+      background: var(--carbon);
+      color: white;
+
+      min-height: 280px;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .actor-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(23, 59, 77, 0.85),
+          rgba(23, 33, 38, 0.95)
+        );
+
+      opacity: 0.9;
+    }
+
+    .actor-card:hover {
+      transform: translateY(-7px);
+
+      box-shadow:
+        0 20px 45px rgba(23, 33, 38, 0.2);
+    }
+
+    .actor-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ================================
+       MAPA
+    ================================= */
+
+    .map-frame {
+      width: 100%;
+      height: 500px;
+
+      border: 1px solid #ccd5d4;
+
+      filter: grayscale(0.3);
+    }
+
+    /* ================================
+       GALERÍA
+    ================================= */
+
+    .image-card {
+      position: relative;
+      overflow: hidden;
+      height: 300px;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+    }
+
+    .image-card:hover img {
+      transform: scale(1.06);
+      filter: grayscale(0.15);
+    }
+
+    .image-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+
+      padding: 35px 20px 20px;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(23, 33, 38, 0.9)
+        );
+
+      color: white;
+    }
+
+    /* ================================
+       ARCHIVO
+    ================================= */
+
+    .archive-paper {
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff 0%,
+          var(--papel) 100%
+        );
+
+      border-left: 5px solid var(--petroleo);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .archive-paper:hover {
+      transform: translateX(5px);
+
+      box-shadow:
+        0 12px 30px rgba(23, 33, 38, 0.08);
+    }
+
+    /* ================================
+       BOTONES
+    ================================= */
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 13px 22px;
+
+      background: var(--petroleo);
+      color: white;
+
+      font-weight: 600;
+
+      transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--azulgris);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 13px 22px;
+
+      border: 1px solid rgba(255, 255, 255, 0.45);
+
+      color: white;
+
+      transition:
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+    }
+
+    /* ================================
+       CITA
+    ================================= */
+
+    .quote {
+      border-left: 4px solid var(--oliva);
+      padding-left: 25px;
+
+      color: var(--azulgris);
+      font-style: italic;
+
+      line-height: 1.9;
+    }
+
+    /* ================================
+       ANIMACIONES
+    ================================= */
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================================
+       MENÚ MÓVIL
+    ================================= */
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    /* ================================
+       RESPONSIVE
+    ================================= */
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 80px 0;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .timeline::before {
+        left: 14px;
+      }
+
+      .timeline-item {
+        padding-left: 50px;
+      }
+
+      .timeline-dot {
+        left: 2px;
+      }
+
+      .map-frame {
+        height: 380px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================
+       LÍNEA EDITORIAL
+  ========================================= -->
+
+  <div class="editorial-line"></div>
+
+  <!-- ========================================
+       NAVEGACIÓN
+  ========================================= -->
+
+  <nav
+    class="fixed top-0 left-0 right-0 z-50 bg-[#172126]/95 backdrop-blur-md text-white border-b border-white/10"
+  >
+    <div
+      class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+    >
+
+      <a
+        href="#portada"
+        class="font-serif text-lg tracking-wide"
+      >
+        Colombia · Memoria Histórica
+      </a>
+
+      <!-- Desktop -->
+
+      <div class="hidden md:flex items-center gap-7 text-sm">
+
+        <a href="#contexto" class="nav-link">
+          Contexto
+        </a>
+
+        <a href="#linea-tiempo" class="nav-link">
+          Línea de tiempo
+        </a>
+
+        <a href="#actores" class="nav-link">
+          Actores
+        </a>
+
+        <a href="#territorio" class="nav-link">
+          Territorio
+        </a>
+
+        <a href="#victimas" class="nav-link">
+          Víctimas
+        </a>
+
+        <a href="#reflexion" class="nav-link">
+          Reflexión
+        </a>
+
+      </div>
+
+      <!-- Mobile -->
+
+      <button
+        id="menuButton"
+        class="md:hidden text-xl"
+        aria-label="Abrir menú"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Menu -->
+
+    <div
+      id="mobileMenu"
+      class="mobile-menu md:hidden bg-[#172126] border-t border-white/10"
+    >
+
+      <div class="px-6 py-5 flex flex-col gap-5">
+
+        <a href="#contexto" class="nav-link">
+          Contexto
+        </a>
+
+        <a href="#linea-tiempo" class="nav-link">
+          Línea de tiempo
+        </a>
+
+        <a href="#actores" class="nav-link">
+          Actores
+        </a>
+
+        <a href="#territorio" class="nav-link">
+          Territorio
+        </a>
+
+        <a href="#victimas" class="nav-link">
+          Víctimas
+        </a>
+
+        <a href="#reflexion" class="nav-link">
+          Reflexión
+        </a>
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ========================================
+       PORTADA
+  ========================================= -->
+
+  <header id="portada" class="hero">
+
+    <div class="max-w-7xl mx-auto px-6 w-full hero-content">
+
+      <div class="max-w-4xl text-white">
+
+        <p
+          class="uppercase tracking-[0.3em] text-sm mb-6 text-[#D8C9A7]"
+        >
+          Historia · Conflicto · Memoria
+        </p>
+
+        <h1
+          class="text-4xl md:text-6xl lg:text-7xl leading-tight mb-8"
+        >
+          El surgimiento y expansión del
+          <span class="text-[#D8C9A7]">
+            paramilitarismo
+          </span>
+          en Colombia
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-white/80 max-w-3xl leading-relaxed mb-10"
+        >
+          Una aproximación histórica a los procesos políticos,
+          sociales y territoriales que acompañaron la aparición,
+          expansión y transformación de estructuras paramilitares
+          durante el conflicto armado colombiano.
+        </p>
+
+        <div
+          class="flex flex-wrap gap-4"
+        >
+
+          <a
+            href="#contexto"
+            class="btn-secondary"
+          >
+            Explorar investigación
+            <i class="fa-solid fa-arrow-down"></i>
+          </a>
+
+        </div>
+
+        <div
+          class="mt-12 pt-6 border-t border-white/20 text-sm text-white/70"
+        >
+
+          <p>
+            <strong class="text-white">
+              Gustavo Adrian Escobar Ortiz
+            </strong>
+          </p>
+
+          <p>
+            Grado 11A · Colegio de Educación Técnica y Académica
+            Celestin Freinet
+          </p>
+
+          <p>
+            Ciencias Sociales
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ========================================
+       CONTEXTO
+  ========================================= -->
+
+  <section id="contexto" class="section bg-fondo">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="fade-up">
+
+        <p
+          class="uppercase tracking-[0.2em] text-sm font-semibold text-petroleo mb-4"
+        >
+          01 · Contexto histórico
+        </p>
+
+        <h2 class="section-title text-3xl md:text-5xl">
+          Un fenómeno construido durante décadas
+        </h2>
+
+        <p class="section-intro text-lg mt-6">
+          El paramilitarismo colombiano no surgió como un fenómeno
+          aislado. Su desarrollo estuvo relacionado con diferentes
+          momentos del conflicto armado, transformaciones políticas,
+          conflictos por la tierra y dinámicas económicas y
+          territoriales.
+        </p>
+
+      </div>
+
+
+      <div
+        class="grid md:grid-cols-3 gap-7 mt-14"
+      >
+
+        <!-- CARD 1 -->
+
+        <article class="editorial-card p-8 fade-up">
+
+          <div class="card-icon mb-7">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+
+          <h3 class="text-xl font-bold mb-4">
+            Marco legal
+          </h3>
+
+          <p class="text-azulgris leading-8">
+            Durante la década de 1960 se establecieron normas que
+            permitieron organizar grupos de autodefensa en determinados
+            contextos. El Decreto 3398 de 1965 y posteriormente la Ley
+            48 de 1968 forman parte de los antecedentes legales
+            asociados a este proceso.
+          </p>
+
+        </article>
+
+
+        <!-- CARD 2 -->
+
+        <article class="editorial-card p-8 fade-up">
+
+          <div
+            class="card-icon mb-7"
+            style="background:#596B4F;"
+          >
+            <i class="fa-solid fa-users"></i>
+          </div>
+
+          <h3 class="text-xl font-bold mb-4">
+            Expansión territorial
+          </h3>
+
+          <p class="text-azulgris leading-8">
+            Durante las décadas de 1980 y 1990 diferentes estructuras
+            paramilitares ampliaron su presencia en regiones
+            estratégicas, vinculándose con conflictos locales,
+            intereses económicos y disputas por el control territorial.
+          </p>
+
+        </article>
+
+
+        <!-- CARD 3 -->
+
+        <article class="editorial-card p-8 fade-up">
+
+          <div
+            class="card-icon mb-7"
+            style="background:#536878;"
+          >
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </div>
+
+          <h3 class="text-xl font-bold mb-4">
+            Transformaciones
+          </h3>
+
+          <p class="text-azulgris leading-8">
+            A finales de los años noventa varias organizaciones
+            regionales se articularon en torno a las Autodefensas Unidas
+            de Colombia. Posteriormente, la desmovilización colectiva
+            iniciada en 2003 estuvo acompañada por procesos de
+            fragmentación y reconfiguración de estructuras armadas.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       LÍNEA DE TIEMPO
+  ========================================= -->
+
+  <section
+    id="linea-tiempo"
+    class="section bg-white"
+  >
+
+    <div class="max-w-5xl mx-auto px-6">
+
+      <div class="fade-up">
+
+        <p
+          class="uppercase tracking-[0.2em] text-sm font-semibold text-petroleo mb-4"
+        >
+          02 · Cronología
+        </p>
+
+        <h2 class="section-title text-3xl md:text-5xl">
+          Línea de tiempo
+        </h2>
+
+        <p class="section-intro text-lg mt-6">
+          Algunos acontecimientos permiten observar las
+          transformaciones de las estructuras paramilitares
+          y su relación con el conflicto armado colombiano.
+        </p>
+
+      </div>
+
+
+      <div class="timeline mt-16">
+
+
+        <!-- 1965 -->
+
+        <div class="timeline-item fade-up">
+
+          <div class="timeline-dot"></div>
+
+          <span class="timeline-year">
+            1965
+          </span>
+
+          <h3 class="text-2xl font-bold mt-4 mb-3">
+            Decreto 3398
+          </h3>
+
+          <p class="text-azulgris leading-8">
+            En el contexto de la Guerra Fría y del conflicto interno,
+            el Decreto 3398 estableció disposiciones relacionadas con
+            la defensa nacional y la organización de mecanismos de
+            autodefensa. Algunas de estas disposiciones fueron
+            posteriormente incorporadas mediante la Ley 48 de 1968.
+          </p>
+
+        </div>
+
+
+        <!-- 1981 -->
+
+        <div class="timeline-item fade-up">
+
+          <div class="timeline-dot"></div>
+
+          <span class="timeline-year">
+            1981
+          </span>
+
+          <h3 class="text-2xl font-bold mt-4 mb-3">
+            Aparición del MAS
+          </h3>
+
+          <p class="text-azulgris leading-8">
+            Surge el grupo conocido como Muerte a Secuestradores,
+            MAS, en un contexto marcado por el secuestro,
+            la violencia política y la reacción de sectores
+            privados y narcotraficantes frente a las guerrillas.
+          </p>
+
+        </div>
+
+
+        <!-- 1997 -->
+
+        <div class="timeline-item fade-up">
+
+          <div class="timeline-dot"></div>
+
+          <span class="timeline-year">
+            1997
+          </span>
+
+          <h3 class="text-2xl font-bold mt-4 mb-3">
+            Formación de las AUC
+          </h3>
+
+          <p class="text-azulgris leading-8">
+            Diferentes grupos de autodefensa regionales se
+            articularon en las Autodefensas Unidas de Colombia,
+            organización que buscó coordinar estructuras
+            paramilitares existentes en diferentes regiones del país.
+          </p>
+
+        </div>
+
+
+        <!-- 2000 -->
+
+        <div class="timeline-item fade-up">
+
+          <div class="timeline-dot"></div>
+
+          <span class="timeline-year">
+            2000
+          </span>
+
+          <h3 class="text-2xl font-bold mt-4 mb-3">
+            Masacre de El Salado
+          </h3>
+
+          <p class="text-azulgris leading-8">
+            Entre el 16 y el 21 de febrero de 2000, integrantes de
+            las AUC cometieron una masacre en El Salado, Bolívar.
+            El hecho dejó numerosas víctimas y provocó el
+            desplazamiento de habitantes de la región.
+          </p>
+
+        </div>
+
+
+        <!-- 2003-2006 -->
+
+        <div class="timeline-item fade-up">
+
+          <div class="timeline-dot"></div>
+
+          <span class="timeline-year">
+            2003–2006
+          </span>
+
+          <h3 class="text-2xl font-bold mt-4 mb-3">
+            Desmovilización
+          </h3>
+
+          <p class="text-azulgris leading-8">
+            Durante este periodo se desarrolló el proceso de
+            desmovilización colectiva de integrantes de las
+            Autodefensas Unidas de Colombia en el marco de
+            negociaciones con el Gobierno colombiano.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       ACTORES
+  ========================================= -->
+
+  <section
+    id="actores"
+    class="section bg-[#E8ECEB]"
+  >
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="fade-up">
+
+        <p
+          class="uppercase tracking-[0.2em] text-sm font-semibold text-petroleo mb-4"
+        >
+          03 · Actores
+        </p>
+
+        <h2 class="section-title text-3xl md:text-5xl">
+          Los actores del conflicto
+        </h2>
+
+        <p class="section-intro text-lg mt-6">
+          La violencia paramilitar se desarrolló dentro de un
+          conflicto complejo en el que participaron organizaciones
+          armadas, instituciones estatales, sectores económicos y
+          comunidades civiles.
+        </p>
+
+      </div>
+
+
+      <div
+        class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-14"
+      >
+
+        <!-- Estado -->
+
+        <article class="actor-card fade-up">
+
+          <div
+            class="actor-content p-7 h-full flex flex-col justify-end"
+          >
+
+            <i
+              class="fa-solid fa-building-columns text-3xl mb-5 text-[#D8C9A7]"
+            ></i>
+
+            <h3 class="text-xl font-bold mb-3">
+              Estado
+            </h3>
+
+            <p class="text-white/70 text-sm leading-7">
+              Instituciones civiles, militares y policiales que
+              tuvieron diferentes responsabilidades y relaciones
+              con las dinámicas del conflicto.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- Paramilitares -->
+
+        <article class="actor-card fade-up">
+
+          <div
+            class="actor-content p-7 h-full flex flex-col justify-end"
+          >
+
+            <i
+              class="fa-solid fa-shield-halved text-3xl mb-5 text-[#D8C9A7]"
+            ></i>
+
+            <h3 class="text-xl font-bold mb-3">
+              Estructuras paramilitares
+            </h3>
+
+            <p class="text-white/70 text-sm leading-7">
+              Organizaciones armadas de carácter regional y nacional
+              que participaron en acciones violentas y disputas
+              por el control territorial.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- Guerrillas -->
+
+        <article class="actor-card fade-up">
+
+          <div
+            class="actor-content p-7 h-full flex flex-col justify-end"
+          >
+
+            <i
+              class="fa-solid fa-person-military-rifle text-3xl mb-5 text-[#D8C9A7]"
+            ></i>
+
+            <h3 class="text-xl font-bold mb-3">
+              Guerrillas
+            </h3>
+
+            <p class="text-white/70 text-sm leading-7">
+              Organizaciones insurgentes que participaron en el
+              conflicto armado y fueron uno de los principales
+              adversarios militares de las estructuras paramilitares.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- Civiles -->
+
+        <article class="actor-card fade-up">
+
+          <div
+            class="actor-content p-7 h-full flex flex-col justify-end"
+          >
+
+            <i
+              class="fa-solid fa-people-group text-3xl mb-5 text-[#D8C9A7]"
+            ></i>
+
+            <h3 class="text-xl font-bold mb-3">
+              Población civil
+            </h3>
+
+            <p class="text-white/70 text-sm leading-7">
+              Comunidades campesinas, indígenas, afrodescendientes
+              y habitantes urbanos afectados por la violencia,
+              desplazamiento y despojo.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       TERRITORIO
+  ========================================= -->
+
+  <section
+    id="territorio"
+    class="section bg-white"
+  >
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="fade-up">
+
+        <p
+          class="uppercase tracking-[0.2em] text-sm font-semibold text-petroleo mb-4"
+        >
+          04 · Territorio
+        </p>
+
+        <h2 class="section-title text-3xl md:text-5xl">
+          Magdalena Medio
+        </h2>
+
+        <p class="section-intro text-lg mt-6">
+          El Magdalena Medio fue una de las regiones donde
+          diferentes actores armados disputaron el control
+          territorial durante el conflicto colombiano.
+        </p>
+
+      </div>
+
+
+      <div
+        class="grid lg:grid-cols-2 gap-12 mt-14 items-center"
+      >
+
+        <div class="fade-up">
+
+          <p class="text-azulgris leading-8 mb-6">
+
+            La región del Magdalena Medio comprende territorios
+            de varios departamentos y ha tenido importancia
+            económica por su ubicación estratégica, actividades
+            agrícolas, ganaderas, mineras y su conexión con
+            diferentes corredores de movilidad.
+
+          </p>
+
+          <p class="text-azulgris leading-8 mb-6">
+
+            Durante diferentes periodos del conflicto armado,
+            grupos paramilitares, guerrillas y otros actores
+            buscaron ejercer influencia sobre comunidades y
+            territorios de la región.
+
+          </p>
+
+          <div
+            class="border-l-4 border-oliva pl-6"
+          >
+
+            <p class="quote">
+              El territorio no fue únicamente el escenario de la
+              violencia: también fue uno de los elementos centrales
+              de las disputas entre los diferentes actores armados.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="fade-up">
+
+          <iframe
+            class="map-frame"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-74.5%2C5.2%2C-73.0%2C8.0&amp;layer=mapnik"
+            loading="lazy"
+            title="Mapa del Magdalena Medio"
+          ></iframe>
+
+          <p class="text-xs text-azulgris mt-3">
+            Mapa de referencia territorial. Fuente cartográfica:
+            OpenStreetMap.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Galería -->
+
+      <div
+        class="grid md:grid-cols-3 gap-5 mt-16"
+      >
+
+        <div class="image-card fade-up">
+
+          <img
+            src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=80"
+            alt="Paisaje rural colombiano"
+            loading="lazy"
+          />
+
+          <div class="image-overlay">
+
+            <h3 class="font-bold text-lg">
+              Territorio rural
+            </h3>
+
+            <p class="text-sm text-white/70 mt-2">
+              Espacios donde las comunidades desarrollaban
+              actividades agrícolas y económicas.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="image-card fade-up">
+
+          <img
+            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80"
+            alt="Paisaje de Colombia"
+            loading="lazy"
+          />
+
+          <div class="image-overlay">
+
+            <h3 class="font-bold text-lg">
+              Geografía
+            </h3>
+
+            <p class="text-sm text-white/70 mt-2">
+              La geografía tuvo un papel importante en las
+              dinámicas de movilidad y control territorial.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="image-card fade-up">
+
+          <img
+            src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=80"
+            alt="Zona rural"
+            loading="lazy"
+          />
+
+          <div class="image-overlay">
+
+            <h3 class="font-bold text-lg">
+              Comunidades
+            </h3>
+
+            <p class="text-sm text-white/70 mt-2">
+              La población civil experimentó desplazamientos,
+              amenazas y otras formas de violencia.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       VÍCTIMAS
+  ========================================= -->
+
+  <section
+    id="victimas"
+    class="section bg-[#E8ECEB]"
+  >
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="fade-up">
+
+        <p
+          class="uppercase tracking-[0.2em] text-sm font-semibold text-petroleo mb-4"
+        >
+          05 · Víctimas y memoria
+        </p>
+
+        <h2 class="section-title text-3xl md:text-5xl">
+          El impacto sobre la población civil
+        </h2>
+
+        <p class="section-intro text-lg mt-6">
+          El conflicto armado produjo asesinatos, desplazamientos,
+          desapariciones, amenazas, despojo y otras formas de
+          victimización que afectaron profundamente a comunidades
+          enteras.
+        </p>
+
+      </div>
+
+
+      <div
+        class="grid lg:grid-cols-2 gap-12 mt-14"
+      >
+
+        <div class="fade-up">
+
+          <div
+            class="bg-white p-8 border border-[#D6DEDD]"
+          >
+
+            <span
+              class="inline-block bg-arena px-3 py-1 text-xs font-bold mb-5"
+            >
+              CASO DE MEMORIA
+            </span>
+
+            <h3 class="text-2xl font-bold mb-5">
+              El Salado
+            </h3>
+
+            <p class="text-azulgris leading-8 mb-5">
+
+              La masacre de El Salado, ocurrida en febrero de 2000,
+              constituye uno de los casos documentados de violencia
+              paramilitar contra población civil durante el conflicto
+              armado colombiano.
+
+            </p>
+
+            <p class="text-azulgris leading-8">
+
+              El Centro Nacional de Memoria Histórica documentó
+              los hechos, sus impactos sobre la comunidad y los
+              procesos posteriores relacionados con memoria,
+              retorno y reconstrucción del tejido social.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="fade-up">
+
+          <h3 class="text-2xl font-bold mb-5">
+            Memoria y reparación
+          </h3>
+
+          <p class="text-azulgris leading-8 mb-7">
+
+            La respuesta institucional frente a las víctimas ha
+            incluido mecanismos judiciales, administrativos y
+            simbólicos. La Ley 1448 de 2011 estableció medidas de
+            atención, asistencia y reparación integral para las
+            víctimas del conflicto armado.
+
+          </p>
+
+
+          <div class="grid sm:grid-cols-2 gap-4">
+
+            <div class="bg-white p-5 border-l-4 border-petroleo">
+
+              <i
+                class="fa-solid fa-hand-holding-heart text-petroleo text-xl mb-3"
+              ></i>
+
+              <h4 class="font-bold mb-2">
+                Reparación
+              </h4>
+
+              <p class="text-sm text-azulgris">
+                Medidas económicas, administrativas y simbólicas.
+              </p>
+
+            </div>
+
+
+            <div class="bg-white p-5 border-l-4 border-oliva">
+
+              <i
+                class="fa-solid fa-house text-oliva text-xl mb-3"
+              ></i>
+
+              <h4 class="font-bold mb-2">
+                Restitución
+              </h4>
+
+              <p class="text-sm text-azulgris">
+                Procesos destinados a restituir tierras despojadas
+                o abandonadas por causa de la violencia.
+              </p>
+
+            </div>
+
+
+            <div class="bg-white p-5 border-l-4 border-azulgris">
+
+              <i
+                class="fa-solid fa-gavel text-azulgris text-xl mb-3"
+              ></i>
+
+              <h4 class="font-bold mb-2">
+                Justicia
+              </h4>
+
+              <p class="text-sm text-azulgris">
+                Procesos judiciales y mecanismos de esclarecimiento
+                relacionados con el conflicto armado.
+              </p>
+
+            </div>
+
+
+            <div class="bg-white p-5 border-l-4 border-arena">
+
+              <i
+                class="fa-solid fa-monument text-[#8A7650] text-xl mb-3"
+              ></i>
+
+              <h4 class="font-bold mb-2">
+                Memoria
+              </h4>
+
+              <p class="text-sm text-azulgris">
+                Reconocimiento de las víctimas y preservación de
+                la memoria histórica.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FUENTES / ARCHIVO
+  ========================================= -->
+
+  <section class="section bg-fondo">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="fade-up">
+
+        <p
+          class="uppercase tracking-[0.2em] text-sm font-semibold text-petroleo mb-4"
+        >
+          Archivo documental
+        </p>
+
+        <h2 class="section-title text-3xl md:text-5xl">
+          Fuentes para profundizar
+        </h2>
+
+      </div>
+
+
+      <div class="grid md:grid-cols-2 gap-5 mt-14">
+
+
+        <!-- Decreto -->
+
+        <a
+          href="https://www.suin-juriscol.gov.co/viewDocument.asp?id=1523913"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="archive-paper p-7 fade-up block"
+        >
+
+          <div class="flex gap-5">
+
+            <div class="text-petroleo text-2xl">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+
+            <div>
+
+              <p class="text-xs uppercase tracking-widest text-azulgris mb-2">
+                Documento jurídico
+              </p>
+
+              <h3 class="text-lg font-bold mb-2">
+                Decreto 3398 de 1965
+              </h3>
+
+              <p class="text-sm text-azulgris leading-6">
+                Antecedente normativo relacionado con la defensa
+                nacional y la organización de mecanismos de
+                autodefensa.
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+
+        <!-- Basta Ya -->
+
+        <a
+          href="https://centrodememoriahistorica.gov.co/micrositios/informeGeneral/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="archive-paper p-7 fade-up block"
+        >
+
+          <div class="flex gap-5">
+
+            <div class="text-oliva text-2xl">
+              <i class="fa-solid fa-book"></i>
+            </div>
+
+            <div>
+
+              <p class="text-xs uppercase tracking-widest text-azulgris mb-2">
+                CNMH
+              </p>
+
+              <h3 class="text-lg font-bold mb-2">
+                ¡Basta Ya!
+              </h3>
+
+              <p class="text-sm text-azulgris leading-6">
+                Informe general sobre el conflicto armado y sus
+                impactos sobre la población colombiana.
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+
+        <!-- El Salado -->
+
+        <a
+          href="https://centrodememoriahistorica.gov.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="archive-paper p-7 fade-up block"
+        >
+
+          <div class="flex gap-5">
+
+            <div class="text-azulgris text-2xl">
+              <i class="fa-solid fa-landmark"></i>
+            </div>
+
+            <div>
+
+              <p class="text-xs uppercase tracking-widest text-azulgris mb-2">
+                Memoria histórica
+              </p>
+
+              <h3 class="text-lg font-bold mb-2">
+                Caso El Salado
+              </h3>
+
+              <p class="text-sm text-azulgris leading-6">
+                Documentación institucional sobre la masacre,
+                sus víctimas y los procesos de memoria.
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+
+        <!-- Ley 1448 -->
+
+        <a
+          href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=43043"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="archive-paper p-7 fade-up block"
+        >
+
+          <div class="flex gap-5">
+
+            <div class="text-petroleo text-2xl">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <div>
+
+              <p class="text-xs uppercase tracking-widest text-azulgris mb-2">
+                Legislación
+              </p>
+
+              <h3 class="text-lg font-bold mb-2">
+                Ley 1448 de 2011
+              </h3>
+
+              <p class="text-sm text-azulgris leading-6">
+                Marco legal para la atención, asistencia y reparación
+                integral de las víctimas del conflicto armado.
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       REFLEXIÓN
+  ========================================= -->
+
+  <section
+    id="reflexion"
+    class="section bg-[#172126] text-white"
+  >
+
+    <div class="max-w-5xl mx-auto px-6">
+
+      <div class="fade-up text-center">
+
+        <p
+          class="uppercase tracking-[0.2em] text-sm font-semibold text-[#D8C9A7] mb-5"
+        >
+          06 · Reflexión final
+        </p>
+
+        <h2 class="font-serif text-3xl md:text-5xl leading-tight mb-10">
+          Comprender el pasado para reconocer sus consecuencias
+        </h2>
+
+      </div>
+
+
+      <div class="fade-up">
+
+        <p
+          class="text-lg md:text-xl leading-9 text-white/75"
+        >
+
+          Estudiar el surgimiento y expansión del paramilitarismo
+          permite comprender que la violencia política y social
+          en Colombia fue resultado de procesos históricos
+          complejos y prolongados.
+
+        </p>
+
+
+        <p
+          class="text-lg md:text-xl leading-9 text-white/75 mt-7"
+        >
+
+          Las víctimas y comunidades afectadas no deben ser
+          entendidas únicamente como cifras. Sus experiencias
+          muestran las consecuencias humanas del desplazamiento,
+          las masacres, las amenazas y el despojo.
+
+        </p>
+
+
+        <p
+          class="text-lg md:text-xl leading-9 text-white/75 mt-7"
+        >
+
+          La memoria histórica permite conservar estos testimonios,
+          reconocer responsabilidades documentadas y comprender
+          los factores que contribuyeron a la prolongación del
+          conflicto armado.
+
+        </p>
+
+      </div>
+
+
+      <div
+        class="mt-14 pt-8 border-t border-white/15 fade-up"
+      >
+
+        <p class="text-sm text-white/50">
+          Trabajo académico · Ciencias Sociales
+        </p>
+
+        <p class="text-sm text-white/50 mt-2">
+          Santiago Giraldo Niño · Grado 11
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
+
+  <footer
+    class="bg-[#0F171B] text-white/50 py-8"
+  >
+
+    <div
+      class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-4 text-sm"
+    >
+
+      <p>
+        © 2026 Santiago Giraldo Niño
+      </p>
+
+      <p>
+        Investigación académica sobre memoria histórica
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ========================================= -->
+
+  <script>
+
+    /* ================================
+       MENÚ MÓVIL
+    ================================= */
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+    menuButton.addEventListener("click", () => {
+
+      mobileMenu.classList.toggle("active");
+
+    });
+
+
+    /* Cerrar menú al seleccionar */
+
+    document
+      .querySelectorAll("#mobileMenu a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          mobileMenu.classList.remove("active");
+
+        });
+
+      });
+
+
+    /* ================================
+       SCROLL REVEAL
+    ================================= */
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    document
+      .querySelectorAll(".fade-up")
+      .forEach(element => {
+
+        observer.observe(element);
+
+      });
+
+
+    /* ================================
+       CAMBIO DE NAV SEGÚN SCROLL
+    ================================= */
+
+    const sections =
+      document.querySelectorAll("section[id]");
+
+    const navLinks =
+      document.querySelectorAll(".nav-link");
+
+
+    window.addEventListener("scroll", () => {
+
+      let current = "";
+
+      sections.forEach(section => {
+
+        const sectionTop =
+          section.offsetTop - 150;
+
+        if (
+          window.scrollY >= sectionTop
+        ) {
+
+          current = section.getAttribute("id");
+
+        }
+
+      });
+
+
+      navLinks.forEach(link => {
+
+        link.classList.remove("text-[#D8C9A7]");
+
+        if (
+          link.getAttribute("href") ===
+          `#${current}`
+        ) {
+
+          link.classList.add("text-[#D8C9A7]");
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
